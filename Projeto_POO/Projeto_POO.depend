@@ -52,3 +52,56 @@
 	<string>
 	"SistemaFicheiros.h"
 
+1762823067 source:c:\users\tiago\desktop\poo_git\projeto_de_poo\projeto_poo\diretoria.cpp
+	"Diretoria.h"
+
+1762823054 c:\users\tiago\desktop\poo_git\projeto_de_poo\projeto_poo\diretoria.h
+	<fstream>
+	<sstream>
+	<iostream>
+	<string>
+	<list>
+	"Elemento.h"
+
+1762823054 c:\users\tiago\desktop\poo_git\projeto_de_poo\projeto_poo\elemento.h
+	<filesystem>
+	<fstream>
+	<sstream>
+	<iostream>
+	<string>
+
+1762823054 source:c:\users\tiago\desktop\poo_git\projeto_de_poo\projeto_poo\elemento.cpp
+	"Elemento.h"
+
+1762823054 source:c:\users\tiago\desktop\poo_git\projeto_de_poo\projeto_poo\ficheiro.cpp
+	"Ficheiro.h"
+
+1762823054 c:\users\tiago\desktop\poo_git\projeto_de_poo\projeto_poo\ficheiro.h
+	<filesystem>
+	<fstream>
+	<sstream>
+	<iostream>
+	<string>
+	<list>
+	"Elemento.h"
+
+1762826856 source:c:\users\tiago\desktop\poo_git\projeto_de_poo\projeto_poo\main.cpp
+	<filesystem>
+	<fstream>
+	<sstream>
+	<iostream>
+	<string>
+	"SistemaFicheiros.h"
+
+1762822454 c:\users\tiago\desktop\poo_git\projeto_de_poo\projeto_poo\sistemaficheiros.h
+	<string>
+	"Diretoria.h"
+	"Ficheiro.h"
+
+1762823054 source:c:\users\tiago\desktop\poo_git\projeto_de_poo\projeto_poo\sistemaficheiros.cpp
+	<filesystem>
+	<fstream>
+	<sstream>
+	<iostream>
+	"SistemaFicheiros.h"
+
