@@ -18,7 +18,7 @@ class Ficheiro : public Elemento
     string extensao;
 
     public:
-        Ficheiro(const fs::path &path);
+        Ficheiro(const string &path);
         virtual ~Ficheiro();
 
         void Mostrar();

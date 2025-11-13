@@ -11,7 +11,7 @@ class SistemaFicheiros
 {
     Diretoria *Dir_principal;
 
-    void CarregarDiretoria(const fs::path &path, Diretoria *dir_atual);
+    void CarregarDiretoria(const string &path, Diretoria *dir_atual);
 
 	public:
 		bool Load(const string &path);
@@ -20,6 +20,8 @@ class SistemaFicheiros
 		int ContarDirectorias(); //feito ate aqui
 		int Memoria();
 		string *DirectoriaMaisElementos ();
+		string *DirectoriaMenosElementos ();
+
 	protected:
 };
 

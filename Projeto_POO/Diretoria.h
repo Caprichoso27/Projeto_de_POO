@@ -16,15 +16,17 @@ class Diretoria : public Elemento
     list<Elemento *> LF;
 
     public:
-        Diretoria(const fs::path &path);
+        Diretoria(const string &path);
         virtual ~Diretoria();
 
         void AddList(Elemento *el);
         void Mostrar();
         void Cont(int &diretorias, int &files);
+        string *GetPathDir();
+        void ContDiretoria(Diretoria *&maior, Diretoria *&menor);
+
     protected:
 
-    private:
 };
 
 #endif // DIRETORIA_H

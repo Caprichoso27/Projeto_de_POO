@@ -14,8 +14,10 @@ int main(){
 
     cout << "Ola bem-vindo" << endl;
 
-    SF.Load("Teste"); //path completo da diretoria
+    SF.Load("C:/Users/tiago/Desktop/POO_final/teste"); //path completo da diretoria
     //SF.MostrarMem();//teste de memoria
     cout << SF.ContarFicheiros() << endl;
     cout << SF.ContarDirectorias() << endl;
+    cout << *(SF.DirectoriaMaisElementos()) << endl;
+    cout << *(SF.DirectoriaMenosElementos()) << endl;
 }

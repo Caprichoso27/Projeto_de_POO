@@ -10,18 +10,23 @@
 using namespace std;
 namespace fs = std::filesystem;
 
+class Diretoria;
+
 class Elemento
 {
+
     protected:
     string Nome;
-    fs::path path;
+    string path;
 
     public:
-        Elemento(const fs::path &path);
+        Elemento(const string &path);
         virtual ~Elemento();
 
         virtual void Mostrar(); //virtual para que seja dependente dos filhos, se os filhos tiverem uma funcao com o mesmo nome sera executada a funcao dos filhos, fazendo assim a diferenciacao entre files e diretorios
         virtual void Cont(int &diretorias, int &files);
+        virtual void ContDiretoria(Diretoria *&maior, Diretoria *&menor);
+
 };
 
 #endif // ELEMENTO_H

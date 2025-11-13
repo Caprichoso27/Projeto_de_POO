@@ -18,10 +18,9 @@ bool SistemaFicheiros::Load(const string &path){
 	}
 
 	if(fs::exists(path)){
-        fs::path path_conv = path; //converte string em path
-        dir_atual = new Diretoria(path_conv);
+        dir_atual = new Diretoria(path);
         Dir_principal = dir_atual;
-        SistemaFicheiros::CarregarDiretoria(path_conv, dir_atual);
+        SistemaFicheiros::CarregarDiretoria(path, dir_atual);
     }
     else{
         cout << "Diretoria não encontrada" << endl;
@@ -29,16 +28,16 @@ bool SistemaFicheiros::Load(const string &path){
 	return true;
 }
 
-void SistemaFicheiros::CarregarDiretoria(const fs::path &path, Diretoria *dir_atual){ //falta metodo para adicionar subdiretorias dentro da diretoria
+void SistemaFicheiros::CarregarDiretoria(const string &path, Diretoria *dir_atual){ //falta metodo para adicionar subdiretorias dentro da diretoria
     //entry-variavel automatica de cada iteracao do directory_iterator
     for (auto const& elemento : fs::directory_iterator{path}){ //vai percurrer o path todo e atribuir um a um a entry
         if(elemento.is_directory()){
-            auto *new_dir_atual = new Diretoria(elemento.path()); //se construtor n aceitar entry -> entry.path().string()
+            auto *new_dir_atual = new Diretoria(elemento.path().string()); //se construtor n aceitar entry -> entry.path().string()
             dir_atual->AddList(new_dir_atual);
-            SistemaFicheiros::CarregarDiretoria(elemento.path(), new_dir_atual); //trocar diretoria para que se saiba onde estamos
+            SistemaFicheiros::CarregarDiretoria(elemento.path().string(), new_dir_atual); //trocar diretoria para que se saiba onde estamos
         }
         else{
-            auto *F = new Ficheiro(elemento.path()); //se construtor n aceitar entry -> entry.path().string()
+            auto *F = new Ficheiro(elemento.path().string()); //se construtor n aceitar entry -> entry.path().string()
             dir_atual->AddList(F);
         }
     }
@@ -63,3 +62,20 @@ int SistemaFicheiros::ContarDirectorias(){
 
     return diretorias - 1; //Para retirar a diretoria dada pelo utilizador
 }
+
+string *SistemaFicheiros::DirectoriaMaisElementos(){
+    Diretoria *maior = NULL;
+    Diretoria *menor = NULL;
+    this->Dir_principal->ContDiretoria(maior, menor);
+
+    return maior->GetPathDir();
+}
+
+string *SistemaFicheiros::DirectoriaMenosElementos(){
+    Diretoria *maior = NULL;
+    Diretoria *menor = NULL;
+    this->Dir_principal->ContDiretoria(maior, menor);
+
+    return menor->GetPathDir();
+}
+
