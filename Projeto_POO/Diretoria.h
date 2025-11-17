@@ -24,7 +24,10 @@ class Diretoria : public Elemento
         void Cont(int &diretorias, int &files);
         string *GetPathDir();
         void ContDiretoria(Diretoria *&maior, Diretoria *&menor);
-
+        int GetSize();
+        void Mem_total(size_t &bytes_totais);
+        void BigFile(Ficheiro *&file);
+        void BigDirectory(Diretoria *&dir);
     protected:
 
 };

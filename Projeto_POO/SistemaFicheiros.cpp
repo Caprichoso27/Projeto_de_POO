@@ -63,12 +63,19 @@ int SistemaFicheiros::ContarDirectorias(){
     return diretorias - 1; //Para retirar a diretoria dada pelo utilizador
 }
 
+int SistemaFicheiros::Memoria(){
+    size_t bytes_totais;
+    this->Dir_principal->Mem_total(bytes_totais);
+
+    return bytes_totais;
+}
+
 string *SistemaFicheiros::DirectoriaMaisElementos(){
     Diretoria *maior = NULL;
     Diretoria *menor = NULL;
     this->Dir_principal->ContDiretoria(maior, menor);
 
-    return maior->GetPathDir();
+    return maior->GetPath();
 }
 
 string *SistemaFicheiros::DirectoriaMenosElementos(){
@@ -76,6 +83,25 @@ string *SistemaFicheiros::DirectoriaMenosElementos(){
     Diretoria *menor = NULL;
     this->Dir_principal->ContDiretoria(maior, menor);
 
-    return menor->GetPathDir();
+    return menor->GetPath();
 }
+
+string *SistemaFicheiros::FicheiroMaior(){
+    Ficheiro *file = NULL;
+    this->Dir_principal->BigFile(file);
+
+    return file->GetPath();
+}
+
+string *SistemaFicheiros::DirectoriaMaisEspaco(){
+    Diretoria *dir = NULL;
+    this->Dir_principal->BigDirectory(dir);
+
+    return dir->GetPath();
+}
+
+/*string *SistemaFicheiros::Search(const string &s, int Tipo){
+
+
+}*/
 

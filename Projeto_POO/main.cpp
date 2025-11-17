@@ -20,4 +20,7 @@ int main(){
     cout << SF.ContarDirectorias() << endl;
     cout << *(SF.DirectoriaMaisElementos()) << endl;
     cout << *(SF.DirectoriaMenosElementos()) << endl;
+    cout << "bytes: " << SF.Memoria() << endl;
+    cout << "Ficheiro: " << *(SF.FicheiroMaior()) << endl;
+    cout << "Diretoria: " << *(SF.DirectoriaMaisEspaco()) << endl;
 }

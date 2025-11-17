@@ -23,6 +23,9 @@ class Ficheiro : public Elemento
 
         void Mostrar();
         void Cont(int &diretorias, int &files);
+        int GetSize();
+        void Mem_total(size_t &bytes_totais);
+        void BigFile(Ficheiro *&file);
     protected:
 
     private:
