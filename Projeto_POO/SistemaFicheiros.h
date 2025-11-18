@@ -23,7 +23,7 @@ class SistemaFicheiros
 		string *DirectoriaMenosElementos ();
 		string *FicheiroMaior();
 		string *DirectoriaMaisEspaco();
-		string *Search(const string &s, int Tipo);
+		string *Search(const string &s, int Tipo);//tipo = 0 ->file; tipo = 1->dir
 
 	protected:
 };

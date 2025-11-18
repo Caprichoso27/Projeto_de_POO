@@ -39,3 +39,13 @@ void Ficheiro::BigFile(Ficheiro *&file){
         file = this;
     }
 }
+
+string *Ficheiro::Pesquisar(const string &s, int Tipo){
+    if(Tipo == 0){
+        int comp = s.compare(this->Nome);
+        if(comp == 0){
+            return &this->path;
+        }
+    }
+    return NULL;
+}

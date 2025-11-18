@@ -35,3 +35,6 @@ void Elemento::BigFile(Ficheiro *&file){
 
 void Elemento::BigDirectory(Diretoria *&dir){
 }
+
+string *Elemento::Pesquisar(const string &s, int Tipo){
+}

@@ -88,3 +88,19 @@ void Diretoria::BigDirectory(Diretoria *&dir){
         E->BigDirectory(dir);
     }
 }
+
+string *Diretoria::Pesquisar(const string &s, int Tipo){
+    if(Tipo == 1){
+        int comp = s.compare(this->Nome);
+        if(comp == 0){
+            return &this->path;
+        }
+    }
+    for(Elemento *E : LF){
+        string *pesq = E->Pesquisar(s, Tipo);
+        if(pesq != NULL){
+            return pesq;
+        }
+    }
+    return NULL;
+}

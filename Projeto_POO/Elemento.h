@@ -32,6 +32,7 @@ class Elemento
         virtual void Mem_total(size_t &bytes_totais);
         virtual void BigFile(Ficheiro *&file);
         virtual void BigDirectory(Diretoria *&dir);
+        virtual string *Pesquisar(const string &s, int Tipo);
 
 };
 

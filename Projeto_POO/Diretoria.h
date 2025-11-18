@@ -28,6 +28,7 @@ class Diretoria : public Elemento
         void Mem_total(size_t &bytes_totais);
         void BigFile(Ficheiro *&file);
         void BigDirectory(Diretoria *&dir);
+        string *Pesquisar(const string &s, int Tipo);
     protected:
 
 };

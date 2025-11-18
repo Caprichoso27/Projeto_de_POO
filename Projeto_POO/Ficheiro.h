@@ -26,6 +26,7 @@ class Ficheiro : public Elemento
         int GetSize();
         void Mem_total(size_t &bytes_totais);
         void BigFile(Ficheiro *&file);
+        string *Pesquisar(const string &s, int Tipo);
     protected:
 
     private:

@@ -23,4 +23,5 @@ int main(){
     cout << "bytes: " << SF.Memoria() << endl;
     cout << "Ficheiro: " << *(SF.FicheiroMaior()) << endl;
     cout << "Diretoria: " << *(SF.DirectoriaMaisEspaco()) << endl;
+    cout << "Pesquisa: " << *(SF.Search("pasta3", 1)) << endl;//se colocar mos alguma coisa q n exista da erro, teremos de colocar validacao quando for pra printar
 }

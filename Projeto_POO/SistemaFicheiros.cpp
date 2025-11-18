@@ -100,8 +100,9 @@ string *SistemaFicheiros::DirectoriaMaisEspaco(){
     return dir->GetPath();
 }
 
-/*string *SistemaFicheiros::Search(const string &s, int Tipo){
+string *SistemaFicheiros::Search(const string &s, int Tipo){
 
-
-}*/
+    string *pesq = this->Dir_principal->Pesquisar(s, Tipo);
+    return pesq;
+}
 
