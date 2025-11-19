@@ -21,7 +21,7 @@ class Ficheiro : public Elemento
         Ficheiro(const string &path);
         virtual ~Ficheiro();
 
-        void Mostrar();
+        void Mostrar(int nivel, string linha, int &ult);
         void Cont(int &diretorias, int &files);
         int GetSize();
         void Mem_total(size_t &bytes_totais);

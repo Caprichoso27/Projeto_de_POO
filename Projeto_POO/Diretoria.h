@@ -20,7 +20,7 @@ class Diretoria : public Elemento
         virtual ~Diretoria();
 
         void AddList(Elemento *el);
-        void Mostrar();
+        void Mostrar(int nivel, string linha, int &ult);
         void Cont(int &diretorias, int &files);
         string *GetPathDir();
         void ContDiretoria(Diretoria *&maior, Diretoria *&menor);

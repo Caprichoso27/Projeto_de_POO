@@ -11,6 +11,7 @@ using namespace std;
 int main(){
 
 	SistemaFicheiros SF;
+	string *teste; //teste para search
 
     cout << "Ola bem-vindo" << endl;
 
@@ -23,5 +24,11 @@ int main(){
     cout << "bytes: " << SF.Memoria() << endl;
     cout << "Ficheiro: " << *(SF.FicheiroMaior()) << endl;
     cout << "Diretoria: " << *(SF.DirectoriaMaisEspaco()) << endl;
-    cout << "Pesquisa: " << *(SF.Search("pasta3", 1)) << endl;//se colocar mos alguma coisa q n exista da erro, teremos de colocar validacao quando for pra printar
+    teste = SF.Search("pasta4", 1);
+    if(teste == NULL){
+        cout << "nao encontrado" << endl;
+    }
+    else{
+        cout << "Pesquisa: " << *(teste) << endl;//se colocar mos alguma coisa q n exista da erro, teremos de colocar validacao quando for pra printar
+    }
 }

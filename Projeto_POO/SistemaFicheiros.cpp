@@ -44,7 +44,10 @@ void SistemaFicheiros::CarregarDiretoria(const string &path, Diretoria *dir_atua
 }
 
 void SistemaFicheiros::MostrarMem(){ //podera tornar-se tree, falta ajustes nos \t
-    this->Dir_principal->Mostrar();
+    int nivel = 0;
+    string linha = "";
+    int ult = 0;
+    this->Dir_principal->Mostrar(nivel, linha, ult);
 }
 
 int SistemaFicheiros::ContarFicheiros(){
@@ -103,6 +106,22 @@ string *SistemaFicheiros::DirectoriaMaisEspaco(){
 string *SistemaFicheiros::Search(const string &s, int Tipo){
 
     string *pesq = this->Dir_principal->Pesquisar(s, Tipo);
+    if(pesq == NULL){
+        return NULL;
+    }
     return pesq;
+}
+
+bool SistemaFicheiros::RemoverAll(const string &s, const string &tipo){
+    if(s.empty() || tipo.empty()){
+        return false;
+    }
+
+    if(tipo == "DIR"){
+        string path_destroy = *(Search(s, 1));
+    }
+    else{
+        string path_destroy = *(Search(s, 0));
+    }
 }
 

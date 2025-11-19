@@ -11,7 +11,7 @@ Elemento::~Elemento()
     //dtor
 }
 
-void Elemento::Mostrar(){//e suposto nao ter nada
+void Elemento::Mostrar(int nivel, string linha, int &ult){//e suposto nao ter nada
 }
 
 void Elemento::Cont(int &diretorias, int &files){//e suposto nao ter nada

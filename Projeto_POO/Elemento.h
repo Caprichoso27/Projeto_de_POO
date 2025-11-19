@@ -24,7 +24,7 @@ class Elemento
         Elemento(const string &path);
         virtual ~Elemento();
 
-        virtual void Mostrar(); //virtual para que seja dependente dos filhos, se os filhos tiverem uma funcao com o mesmo nome sera executada a funcao dos filhos, fazendo assim a diferenciacao entre files e diretorios
+        virtual void Mostrar(int nivel, string linha, int &ult); //virtual para que seja dependente dos filhos, se os filhos tiverem uma funcao com o mesmo nome sera executada a funcao dos filhos, fazendo assim a diferenciacao entre files e diretorios
         virtual void Cont(int &diretorias, int &files);
         virtual void ContDiretoria(Diretoria *&maior, Diretoria *&menor);
         virtual int GetSize();

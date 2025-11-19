@@ -9,8 +9,9 @@ Ficheiro::~Ficheiro()
     //dtor
 }
 
-void Ficheiro::Mostrar(){
-    cout << path << endl;
+void Ficheiro::Mostrar(int nivel, string linha, int &ult){
+    linha = linha + "--";
+    cout << linha << Nome << endl;
 }
 
 void Ficheiro::Cont(int &diretorias, int &files){
