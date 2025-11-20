@@ -20,15 +20,18 @@ class Diretoria : public Elemento
         virtual ~Diretoria();
 
         void AddList(Elemento *el);
-        void Mostrar(int nivel, string linha, int &ult);
+        void Mostrar(int nivel);
         void Cont(int &diretorias, int &files);
-        string *GetPathDir();
+        //string *GetPathDir();
+        void *Get(const string &campo);
         void ContDiretoria(Diretoria *&maior, Diretoria *&menor);
         int GetSize();
         void Mem_total(size_t &bytes_totais);
         void BigFile(Ficheiro *&file);
         void BigDirectory(Diretoria *&dir);
-        string *Pesquisar(const string &s, int Tipo);
+        Elemento *Pesquisar(const string &s, int Tipo);
+        bool RemoverAll2(const string &tipo);
+        bool RemoverAll3(const string &tipo);
     protected:
 
 };

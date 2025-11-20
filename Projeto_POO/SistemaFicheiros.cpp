@@ -2,6 +2,7 @@
 #include <fstream>
 #include <sstream>
 #include<iostream>
+#include<list>
 #include "SistemaFicheiros.h"
 
 using namespace std;
@@ -45,9 +46,7 @@ void SistemaFicheiros::CarregarDiretoria(const string &path, Diretoria *dir_atua
 
 void SistemaFicheiros::MostrarMem(){ //podera tornar-se tree, falta ajustes nos \t
     int nivel = 0;
-    string linha = "";
-    int ult = 0;
-    this->Dir_principal->Mostrar(nivel, linha, ult);
+    this->Dir_principal->Mostrar(nivel);
 }
 
 int SistemaFicheiros::ContarFicheiros(){
@@ -78,7 +77,7 @@ string *SistemaFicheiros::DirectoriaMaisElementos(){
     Diretoria *menor = NULL;
     this->Dir_principal->ContDiretoria(maior, menor);
 
-    return maior->GetPath();
+    return (string *)maior->Get("path");
 }
 
 string *SistemaFicheiros::DirectoriaMenosElementos(){
@@ -86,42 +85,45 @@ string *SistemaFicheiros::DirectoriaMenosElementos(){
     Diretoria *menor = NULL;
     this->Dir_principal->ContDiretoria(maior, menor);
 
-    return menor->GetPath();
+    return (string *)menor->Get("path");
 }
 
 string *SistemaFicheiros::FicheiroMaior(){
     Ficheiro *file = NULL;
     this->Dir_principal->BigFile(file);
 
-    return file->GetPath();
+    return (string *)file->Get("path");
 }
 
 string *SistemaFicheiros::DirectoriaMaisEspaco(){
     Diretoria *dir = NULL;
     this->Dir_principal->BigDirectory(dir);
 
-    return dir->GetPath();
+    return (string *)dir->Get("path");
 }
 
 string *SistemaFicheiros::Search(const string &s, int Tipo){
 
-    string *pesq = this->Dir_principal->Pesquisar(s, Tipo);
-    if(pesq == NULL){
+    Elemento *pesq = this->Dir_principal->Pesquisar(s, Tipo);
+    if(pesq == NULL){ //para que o GetPath nao de erro
         return NULL;
     }
-    return pesq;
+    return (string *)pesq->Get("path");
 }
 
-bool SistemaFicheiros::RemoverAll(const string &s, const string &tipo){
-    if(s.empty() || tipo.empty()){
+bool SistemaFicheiros::RemoverAll(const string &s, const string &tipo){ //validar output
+    if(s.empty()){
         return false;
     }
 
-    if(tipo == "DIR"){
-        string path_destroy = *(Search(s, 1));
+    Diretoria *dir_destroy = (Diretoria *)this->Dir_principal->Pesquisar(s, 1);
+
+    if(dir_destroy == NULL){
+        return false;
     }
-    else{
-        string path_destroy = *(Search(s, 0));
-    }
+
+    dir_destroy->RemoverAll2(tipo);
+
+    return true;
 }
 

@@ -11,7 +11,7 @@ Elemento::~Elemento()
     //dtor
 }
 
-void Elemento::Mostrar(int nivel, string linha, int &ult){//e suposto nao ter nada
+void Elemento::Mostrar(int nivel){//e suposto nao ter nada
 }
 
 void Elemento::Cont(int &diretorias, int &files){//e suposto nao ter nada
@@ -21,6 +21,9 @@ void Elemento::ContDiretoria(Diretoria *&maior, Diretoria *&menor){
 }
 
 int Elemento::GetSize(){
+}
+
+void *Elemento::Get(const string &campo){
 }
 
 string *Elemento::GetPath(){
@@ -36,5 +39,8 @@ void Elemento::BigFile(Ficheiro *&file){
 void Elemento::BigDirectory(Diretoria *&dir){
 }
 
-string *Elemento::Pesquisar(const string &s, int Tipo){
+Elemento *Elemento::Pesquisar(const string &s, int Tipo){
+}
+
+bool Elemento::RemoverAll3(const string &tipo){
 }

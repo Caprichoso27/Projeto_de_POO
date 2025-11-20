@@ -16,22 +16,16 @@ void Diretoria::AddList(Elemento *el){
     LF.push_front(el);
 }
 
-void Diretoria::Mostrar(int nivel, string linha, int &ult){ //ESTA MERDA TA TD FDD CAGA NISTO-----------------------
-
-    int index = 0;
-    int ult_filho = 0;
-    string linha_filho = linha;
-
-        cout << linha << Nome << endl;
-        for(Elemento *E : this->LF){
-            index++;
-            if(index == LF.size()){
-                ult_filho = 1;
-            }
-        }
-
+void Diretoria::Mostrar(int nivel){ //ESTA MERDA TA TD FDD CAGA NISTO-----------------------------------
     nivel++;
 
+    cout << Nome << endl;
+    for(Elemento *E : this->LF){
+        for(int i=1 ; i<=nivel ; i++){
+            cout << "   ";
+        }
+        E->Mostrar(nivel);
+    }
 }
 
 /*  for(Elemento *E : this->LF){ //recursivo para que entre na diretoria e repita o processo
@@ -42,7 +36,7 @@ void Diretoria::Mostrar(int nivel, string linha, int &ult){ //ESTA MERDA TA TD F
         E->Mostrar(nivel, linha, ult_filho);
     }*/
 
-//ATE AQUI TA TD MAL-------------------------------------------------------------------------------------------------
+//ATE AQUI TA TD MAL--------------------------------------------------------------------------------------------------------------
 void Diretoria::Cont(int &diretorias, int &files){ //percorrer
     diretorias++;
     for(Elemento *E : LF){
@@ -50,8 +44,22 @@ void Diretoria::Cont(int &diretorias, int &files){ //percorrer
     }
 }
 
-string *Diretoria::GetPathDir(){
+/*string *Diretoria::GetPathDir(){
     return &(this->path);
+}*/
+
+/*void *Diretoria::GetList(){
+    return &this->LF;
+}*/
+
+void *Diretoria::Get(const string &campo){
+    if(campo == "path"){
+        return &(this->path);
+    }
+    if(campo =="Nome"){
+        return &(this->Nome);
+    }
+    return NULL;
 }
 
 void Diretoria::ContDiretoria(Diretoria *&maior, Diretoria *&menor){ //mecanismo de percorrer no fundo
@@ -109,18 +117,43 @@ void Diretoria::BigDirectory(Diretoria *&dir){
     }
 }
 
-string *Diretoria::Pesquisar(const string &s, int Tipo){
+Elemento *Diretoria::Pesquisar(const string &s, int Tipo){
     if(Tipo == 1){
         int comp = s.compare(this->Nome);
         if(comp == 0){
-            return &this->path;
+            return this;
         }
     }
     for(Elemento *E : LF){
-        string *pesq = E->Pesquisar(s, Tipo);
+        Elemento *pesq = E->Pesquisar(s, Tipo);
         if(pesq != NULL){
             return pesq;
         }
     }
     return NULL;
+}
+
+bool Diretoria::RemoverAll2(const string &tipo){
+    auto E = LF.begin(); //auto porque nao sabemos o return de LF.begin
+    while(E != LF.end()){
+        Elemento *E2 = *E; //para que tenhamos outro ponteiro, para apagar esta instancia se necessario
+        bool remover = E2->RemoverAll3(tipo);
+        if(remover == true){
+            E = LF.erase(E);
+            delete E2;
+        }
+        else{
+            E++;
+        }
+    }
+    return true;
+}
+
+bool Diretoria::RemoverAll3(const string &tipo){ //saber se e ou nao para apagar
+    if(tipo == "DIR"){
+        return true;
+    }
+    else{
+        return false;
+    }
 }

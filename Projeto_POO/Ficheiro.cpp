@@ -9,9 +9,8 @@ Ficheiro::~Ficheiro()
     //dtor
 }
 
-void Ficheiro::Mostrar(int nivel, string linha, int &ult){
-    linha = linha + "--";
-    cout << linha << Nome << endl;
+void Ficheiro::Mostrar(int nivel){
+    cout << Nome << endl;
 }
 
 void Ficheiro::Cont(int &diretorias, int &files){
@@ -41,12 +40,35 @@ void Ficheiro::BigFile(Ficheiro *&file){
     }
 }
 
-string *Ficheiro::Pesquisar(const string &s, int Tipo){
+Elemento *Ficheiro::Pesquisar(const string &s, int Tipo){
     if(Tipo == 0){
         int comp = s.compare(this->Nome);
         if(comp == 0){
-            return &this->path;
+            return this;
         }
     }
     return NULL;
 }
+
+bool Ficheiro::RemoverAll3(const string &tipo){
+    if(tipo != "DIR"){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
+void *Ficheiro::Get(const string &campo){
+    if(campo == "path"){
+        return &(this->path);
+    }
+    if(campo =="extensao"){
+        return &(this->extensao);
+    }
+    if(campo =="Nome"){
+        return &(this->Nome);
+    }
+    return NULL;
+}
+
