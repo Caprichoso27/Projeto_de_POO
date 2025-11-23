@@ -35,4 +35,5 @@ int main(){
     SF.MoveFicheiro("texto3.txt", "pasta2");//13
     SF.MoverDirectoria("pasta2", "pasta3");//14
     SF.MostrarMem();
+    SF.DataFicheiro("texto3.txt");
 }

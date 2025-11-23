@@ -1,6 +1,7 @@
 #ifndef SISTEMAFICHEIROS_H
 #define SISTEMAFICHEIROS_H
 #include<string>
+#include<format>
 
 #include"Diretoria.h"
 #include"Ficheiro.h"
@@ -27,6 +28,7 @@ class SistemaFicheiros
 		bool RemoverAll(const string &s, const string &tipo); //true->destruiu o que era suposto
 		bool MoveFicheiro(const string &Fich, const string &DirNova);
 		bool MoverDirectoria(const string &DirOld, const string &DirNew);
+		string *DataFicheiro(const string &ficheiro);
 	protected:
 };
 

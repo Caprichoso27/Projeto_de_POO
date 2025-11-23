@@ -144,3 +144,26 @@ bool SistemaFicheiros::MoverDirectoria(const string &DirOld, const string &DirNe
     bool retorno = this->Dir_principal->MoveDir(DirOld, DirNew);
     return retorno;
 }
+
+string *SistemaFicheiros::DataFicheiro(const string &ficheiro){
+    Ficheiro *file = (Ficheiro *)this->Dir_principal->Pesquisar(ficheiro, 0);
+    if(file == NULL){
+        return NULL;
+    }
+    fs::path path_file = *(string *)file->Get("path");
+    fs::file_time_type file_time = fs::last_write_time(path_file);
+
+    //RETIRADO DO MANO CHAT
+    auto stp = chrono::time_point_cast<chrono::system_clock::duration>(file_time - fs::file_time_type::clock::now()+ chrono::system_clock::now());
+
+    // Converter para time_t (para formatar/imprimir)
+    time_t cftime = chrono::system_clock::to_time_t(stp);
+
+    // Converter para string
+    string* resultado = new string(std::ctime(&cftime));
+
+    cout << *resultado << endl;
+    system("pause");
+
+    return resultado;
+}
