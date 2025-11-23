@@ -6,6 +6,8 @@
 #include<iostream> //uintmax_t
 #include<string>
 #include<list>
+#include<filesystem>
+#include<algorithm>
 
 #include"Elemento.h"
 
@@ -32,7 +34,9 @@ class Diretoria : public Elemento
         Elemento *Pesquisar(const string &s, int Tipo);
         bool RemoverAll2(const string &tipo);
         bool RemoverAll3(const string &tipo);
+        bool MoveFile(const string &Fich, const string &DirNova);
     protected:
+        //Diretoria *Pesquisa_Dir_Ant(const string &s, int tipo);
 
 };
 

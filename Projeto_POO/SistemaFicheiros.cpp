@@ -127,3 +127,11 @@ bool SistemaFicheiros::RemoverAll(const string &s, const string &tipo){ //valida
     return true;
 }
 
+bool SistemaFicheiros::MoveFicheiro(const string &Fich, const string &DirNova){
+    if(Fich.empty() || DirNova.empty()){
+        return false;
+    }
+
+    bool retorno = this->Dir_principal->MoveFile(Fich, DirNova);
+    return retorno;
+}

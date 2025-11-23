@@ -44,14 +44,6 @@ void Diretoria::Cont(int &diretorias, int &files){ //percorrer
     }
 }
 
-/*string *Diretoria::GetPathDir(){
-    return &(this->path);
-}*/
-
-/*void *Diretoria::GetList(){
-    return &this->LF;
-}*/
-
 void *Diretoria::Get(const string &campo){
     if(campo == "path"){
         return &(this->path);
@@ -156,4 +148,53 @@ bool Diretoria::RemoverAll3(const string &tipo){ //saber se e ou nao para apagar
     else{
         return false;
     }
+}
+
+
+/*Diretoria *Diretoria::Pesquisa_Dir_Ant(const string &s, int tipo){
+    for(Elemento *E : LF){
+        Elemento *pesq = E->Pesquisar(s, tipo);
+        if(pesq != NULL){
+            return this;
+        }
+    }
+    for (Elemento *E : LF) {
+        Diretoria *subDir = dynamic_cast<Diretoria*>(E);
+        if (subDir != NULL) {
+            Diretoria *resultado = subDir->Pesquisa_Dir_Ant(s, tipo);
+            if (resultado != NULL) {
+                return resultado; // Elemento encontrado em subdiretoria
+            }
+        }
+    }
+    return NULL;
+}*/
+
+bool Diretoria::MoveFile(const string &Fich, const string &DirNova){
+    Elemento *elemento = this->Pesquisar(Fich, 0);
+    if(elemento == NULL){
+        return false;
+    }
+
+    std::filesystem::path path_elemento = *((string *)elemento->Get("path"));
+    std::filesystem::path dir_mae = path_elemento.parent_path();
+    string dir_antiga = dir_mae.filename().string();//temos o path apenas queremos o nome para a funcao pesquisar nao dar erro
+
+    Diretoria *dir = (Diretoria *)this->Pesquisar(DirNova, 1);
+    if(dir == NULL){
+        return false;
+    }
+    Diretoria *dir_ant = (Diretoria *)this->Pesquisar(dir_antiga, 1);
+
+    /*string string_dir = dir->path + "/" + *((string *)file->Get("Nome"));
+
+    std::filesystem::path path_file = *((string *)file->Get("path"));
+    std::filesystem::path path_dir = string_dir;
+
+    std::filesystem::rename(path_file, path_dir);*/
+
+    dir->LF.push_front(elemento);
+    dir_ant->LF.remove(elemento);
+
+    return true;
 }

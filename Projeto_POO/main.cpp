@@ -16,7 +16,7 @@ int main(){
     cout << "Ola bem-vindo" << endl;
 
     SF.Load("C:/Users/tiago/Desktop/POO_final/teste");//1 //path completo da diretoria
-    SF.RemoverAll("pasta3",""); //10
+    //SF.RemoverAll("pasta3",""); //10
     SF.MostrarMem();//teste de memoria
     cout << SF.ContarFicheiros() << endl;
     cout << SF.ContarDirectorias() << endl;
@@ -32,5 +32,6 @@ int main(){
     else{
         cout << "Pesquisa: " << *(teste) << endl;//se colocar mos alguma coisa q n exista da erro, teremos de colocar validacao quando for pra printar
     }
-
+    SF.MoveFicheiro("texto3.txt", "pasta2");//13 //para fazer 14 e so copiar funcao e trocar 1 por 0--------------------------------------
+    SF.MostrarMem();
 }
