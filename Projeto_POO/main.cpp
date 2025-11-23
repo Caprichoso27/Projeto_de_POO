@@ -32,6 +32,7 @@ int main(){
     else{
         cout << "Pesquisa: " << *(teste) << endl;//se colocar mos alguma coisa q n exista da erro, teremos de colocar validacao quando for pra printar
     }
-    SF.MoveFicheiro("texto3.txt", "pasta2");//13 //para fazer 14 e so copiar funcao e trocar 1 por 0--------------------------------------
+    SF.MoveFicheiro("texto3.txt", "pasta2");//13
+    SF.MoverDirectoria("pasta2", "pasta3");//14
     SF.MostrarMem();
 }

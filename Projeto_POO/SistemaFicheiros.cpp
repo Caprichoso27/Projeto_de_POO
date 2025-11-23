@@ -135,3 +135,12 @@ bool SistemaFicheiros::MoveFicheiro(const string &Fich, const string &DirNova){
     bool retorno = this->Dir_principal->MoveFile(Fich, DirNova);
     return retorno;
 }
+
+bool SistemaFicheiros::MoverDirectoria(const string &DirOld, const string &DirNew){
+    if(DirOld.empty() || DirNew.empty()){
+        return false;
+    }
+
+    bool retorno = this->Dir_principal->MoveDir(DirOld, DirNew);
+    return retorno;
+}

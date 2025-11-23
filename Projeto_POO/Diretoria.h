@@ -35,6 +35,7 @@ class Diretoria : public Elemento
         bool RemoverAll2(const string &tipo);
         bool RemoverAll3(const string &tipo);
         bool MoveFile(const string &Fich, const string &DirNova);
+        bool MoveDir(const string &DirOld, const string &DirNew);
     protected:
         //Diretoria *Pesquisa_Dir_Ant(const string &s, int tipo);
 

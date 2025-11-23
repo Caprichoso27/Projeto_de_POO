@@ -26,6 +26,7 @@ class SistemaFicheiros
 		string *Search(const string &s, int Tipo);//tipo = 0 ->file; tipo = 1->dir
 		bool RemoverAll(const string &s, const string &tipo); //true->destruiu o que era suposto
 		bool MoveFicheiro(const string &Fich, const string &DirNova);
+		bool MoverDirectoria(const string &DirOld, const string &DirNew);
 	protected:
 };
 

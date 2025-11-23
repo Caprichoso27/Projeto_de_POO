@@ -198,3 +198,32 @@ bool Diretoria::MoveFile(const string &Fich, const string &DirNova){
 
     return true;
 }
+
+bool Diretoria::MoveDir(const string &DirOld, const string &DirNew){
+    Elemento *elemento = this->Pesquisar(DirOld, 1);
+    if(elemento == NULL){
+        return false;
+    }
+
+    std::filesystem::path path_elemento = *((string *)elemento->Get("path"));
+    std::filesystem::path dir_mae = path_elemento.parent_path();
+    string dir_antiga = dir_mae.filename().string();//temos o path apenas queremos o nome para a funcao pesquisar nao dar erro
+
+    Diretoria *dir = (Diretoria *)this->Pesquisar(DirNew, 1);
+    if(dir == NULL){
+        return false;
+    }
+    Diretoria *dir_ant = (Diretoria *)this->Pesquisar(dir_antiga, 1);
+
+    /*string string_dir = dir->path + "/" + *((string *)file->Get("Nome"));
+
+    std::filesystem::path path_file = *((string *)file->Get("path"));
+    std::filesystem::path path_dir = string_dir;
+
+    std::filesystem::rename(path_file, path_dir);*/
+
+    dir->LF.push_front(elemento);
+    dir_ant->LF.remove(elemento);
+
+    return true;
+}
