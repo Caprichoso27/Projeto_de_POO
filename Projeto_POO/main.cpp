@@ -1,7 +1,6 @@
 #include<filesystem>
 #include <fstream>
-#include <sstream>
-#include<iostream> //uintmax_t
+#include<iostream>
 #include<string>
 
 #include "SistemaFicheiros.h"
@@ -35,5 +34,6 @@ int main(){
     SF.MoveFicheiro("texto3.txt", "pasta2");//13
     SF.MoverDirectoria("pasta2", "pasta3");//14
     SF.MostrarMem();
-    SF.DataFicheiro("texto3.txt");
+    SF.DataFicheiro("texto3.txt");//15
+    SF.Tree();//16
 }

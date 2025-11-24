@@ -1,7 +1,6 @@
 #ifndef SISTEMAFICHEIROS_H
 #define SISTEMAFICHEIROS_H
 #include<string>
-#include<format>
 
 #include"Diretoria.h"
 #include"Ficheiro.h"
@@ -29,6 +28,7 @@ class SistemaFicheiros
 		bool MoveFicheiro(const string &Fich, const string &DirNova);
 		bool MoverDirectoria(const string &DirOld, const string &DirNew);
 		string *DataFicheiro(const string &ficheiro);
+		void Tree();
 	protected:
 };
 

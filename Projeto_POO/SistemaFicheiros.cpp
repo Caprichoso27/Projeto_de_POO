@@ -1,6 +1,5 @@
 #include<filesystem>
 #include <fstream>
-#include <sstream>
 #include<iostream>
 #include<list>
 #include "SistemaFicheiros.h"
@@ -152,18 +151,16 @@ string *SistemaFicheiros::DataFicheiro(const string &ficheiro){
     }
     fs::path path_file = *(string *)file->Get("path");
     fs::file_time_type file_time = fs::last_write_time(path_file);
+    const auto systemTime = std::chrono::file_clock::to_sys(file_time);
+    time_t time_file = std::chrono::system_clock::to_time_t(systemTime);
 
-    //RETIRADO DO MANO CHAT
-    auto stp = chrono::time_point_cast<chrono::system_clock::duration>(file_time - fs::file_time_type::clock::now()+ chrono::system_clock::now());
+    string resultado = ctime(&time_file);
 
-    // Converter para time_t (para formatar/imprimir)
-    time_t cftime = chrono::system_clock::to_time_t(stp);
+    return &resultado;
+}
 
-    // Converter para string
-    string* resultado = new string(std::ctime(&cftime));
-
-    cout << *resultado << endl;
-    system("pause");
-
-    return resultado;
+void SistemaFicheiros::Tree(){
+    string path = *(string *)this->Dir_principal->Get("path");
+    path = "tree/F " + path;
+    system(path.c_str());//c_str(), converte string em char, system so consegue ler char
 }

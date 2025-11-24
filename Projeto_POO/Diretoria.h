@@ -3,11 +3,10 @@
 
 #include <fstream>
 #include <sstream>
-#include<iostream> //uintmax_t
+#include<iostream>
 #include<string>
 #include<list>
 #include<filesystem>
-#include<algorithm>
 
 #include"Elemento.h"
 
