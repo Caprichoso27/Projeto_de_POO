@@ -1,0 +1,78 @@
+\doxysection{Elemento.\+h}
+\hypertarget{_elemento_8h_source}{}\label{_elemento_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ ELEMENTO\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ ELEMENTO\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include<filesystem>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include<iostream>}\ \textcolor{comment}{//uintmax\_t}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include<string>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include<list>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00012\ \textcolor{keyword}{namespace\ }fs\ =\ std::filesystem;}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_diretoria}{Diretoria}};}
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_ficheiro}{Ficheiro}};}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_elemento_a7a2d2dc143c0e5f30ebf8b6448890ede}{Elemento}}}
+\DoxyCodeLine{00022\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{string}\ Nome;}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{string}\ path;}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_elemento_a7a2d2dc143c0e5f30ebf8b6448890ede}{Elemento}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&path);}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_elemento_af49135626b9f2b5e50d93fb36620e359}{\string~Elemento}}();}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_elemento_afe5cfe83f97696e347be6c53417e4e84}{Escrever\_file}}(\textcolor{keywordtype}{int}\ ultimo,\ \textcolor{keywordtype}{string}\ espaco,\ \textcolor{keywordtype}{int}\ repeticao,\ ofstream\ \&file\_tree);}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_elemento_afec05aa42e6525cb8e29585c35c1a485}{Escrever\_ecra}}(\textcolor{keywordtype}{int}\ ultimo,\ \textcolor{keywordtype}{string}\ espaco,\ \textcolor{keywordtype}{int}\ repeticao);}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_elemento_a7dbcf56ac5c6f7a99e93bb33ebeb12ca}{Cont}}(\textcolor{keywordtype}{int}\ \&diretorias,\ \textcolor{keywordtype}{int}\ \&files);}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_elemento_affb29a9829d401b6205625c816da065a}{ContDiretoria}}(\mbox{\hyperlink{class_diretoria}{Diretoria}}\ *\&maior,\ \mbox{\hyperlink{class_diretoria}{Diretoria}}\ *\&menor);}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_elemento_a787677f1d9c152fd51d2bc1af68c3b0f}{GetSize}}();}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ *\mbox{\hyperlink{class_elemento_a00fed0fec20baaab06e3c6d96e57aaa1}{Get}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&campo);}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_elemento_a36a4a4282def9ac3ea0c0a8c34051a63}{Mem\_total}}(\textcolor{keywordtype}{int}\ \&bytes\_totais);}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_elemento_a9f1ccdf1352a73b9c274c8987a8b485b}{BigFile}}(\mbox{\hyperlink{class_ficheiro}{Ficheiro}}\ *\&file);}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_elemento_af22a3dfe5a720ea92abf284699ecbfd5}{BigDirectory}}(\mbox{\hyperlink{class_diretoria}{Diretoria}}\ *\&dir);}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_elemento_a7a2d2dc143c0e5f30ebf8b6448890ede}{Elemento}}\ *\mbox{\hyperlink{class_elemento_a5b7742e9233b1620ab11b1ded1805023}{Pesquisar}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&s,\ \textcolor{keywordtype}{int}\ Tipo);}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_elemento_ab90a9f76657cd5727186355f497287b5}{RemoverAll3}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&tipo);}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_elemento_a719eebc4504d4225ca7f8f9bf74a448f}{MoveFile}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&Fich,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&DirNova);}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_elemento_afa073b1a3d111b621a786b149db05fb1}{MoveDir}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&DirOld,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&DirNew);}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_elemento_a51913b6a4e4ff2bbe472bf85408943f0}{PesqDir}}(list<string>\ \&lres,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&dir);}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_elemento_abd30928ffcaf06839be69dd08b9abfca}{PesqFile}}(list<string>\ \&lres,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&file);}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_elemento_ada590fdd2ef17299369840f26b311b61}{PesqFile\_Ponteiro}}(list<Elemento\ *>\ \&lres,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&file);}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_elemento_a8033d9423187cfdf8f0a15738e891d1d}{ChangeName}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&name);}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_elemento_aa90c93c8524da94199aa03c1508ee8f5}{Dupe}}(list<list<Elemento\ *>>\ \&LS);}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_elemento_ac97e8e6ec05512235ac850a4419f900e}{Find\_padrao}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&padrao,\ list<Elemento\ *>\ \&LS);}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_elemento_ac0c38aef696c6293b41eaf5fa84d048a}{Colocar\_list}}(list<Elemento\ *>\ LS);}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_elemento_a5d9fd37eeb371fd603e9b04af9ea7c4c}{Mudar\_nome}}(\textcolor{keywordtype}{int}\ \&num);}
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_elemento_a6f2fbe2dbc0a36bfdcacdb102f1bbfbf}{Escrever\_XML}}(fstream\ \&xml\_file,\ \textcolor{keywordtype}{int}\ nivel);}
+\DoxyCodeLine{00193\ \};}
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00195\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ ELEMENTO\_H}}
+
+\end{DoxyCode}

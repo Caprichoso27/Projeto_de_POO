@@ -16,27 +16,64 @@ void Diretoria::AddList(Elemento *el){
     LF.push_front(el);
 }
 
-void Diretoria::Mostrar(int nivel){ //ESTA MERDA TA TD FDD CAGA NISTO-----------------------------------
-    nivel++;
-
-    cout << Nome << endl;
-    for(Elemento *E : this->LF){
-        for(int i=1 ; i<=nivel ; i++){
-            cout << "   ";
+void Diretoria::Escrever_file(int ultimo, string espaco, int repeticao, ofstream &file_tree){
+    if(repeticao != 0){
+        if(ultimo == 0){
+            espaco = espaco + "   |";
         }
-        E->Mostrar(nivel);
+        else{
+            espaco = espaco + "   ";
+        }
+        file_tree << espaco << "--" << Nome << endl;
+    }
+    else{
+        repeticao = 1;
+        file_tree << espaco << Nome << endl;
+    }
+
+
+    for(Elemento *E : this->LF){
+        auto ult = LF.end();
+        ult--;
+        if(E == *ult){
+            ultimo = 1;
+        }
+        else{
+            ultimo = 0;
+        }
+        E->Escrever_file(ultimo, espaco, repeticao, file_tree);
     }
 }
 
-/*  for(Elemento *E : this->LF){ //recursivo para que entre na diretoria e repita o processo
-        index++;
-        if(index == LF.size()){
-            ult_filho = 1;
+void Diretoria::Escrever_ecra(int ultimo, string espaco, int repeticao){
+    if(repeticao != 0){
+        if(ultimo == 0){
+            espaco = espaco + "   |";
         }
-        E->Mostrar(nivel, linha, ult_filho);
-    }*/
+        else{
+            espaco = espaco + "   ";
+        }
+        cout << espaco << "--" << Nome << endl;
+    }
+    else{
+        repeticao = 1;
+        cout << espaco << Nome << endl;
+    }
 
-//ATE AQUI TA TD MAL--------------------------------------------------------------------------------------------------------------
+
+    for(Elemento *E : this->LF){
+        auto ult = LF.end();
+        ult--;
+        if(E == *ult){
+            ultimo = 1;
+        }
+        else{
+            ultimo = 0;
+        }
+        E->Escrever_ecra(ultimo, espaco, repeticao);
+    }
+}
+
 void Diretoria::Cont(int &diretorias, int &files){ //percorrer
     diretorias++;
     for(Elemento *E : LF){
@@ -84,7 +121,7 @@ int Diretoria::GetSize(){
     return tamanho;
 }
 
-void Diretoria::Mem_total(size_t &bytes_totais){ //percorrer
+void Diretoria::Mem_total(int &bytes_totais){ //percorrer
     bytes_totais += this->GetSize();
     for(Elemento *E : LF){
         E->Mem_total(bytes_totais);
@@ -125,7 +162,7 @@ Elemento *Diretoria::Pesquisar(const string &s, int Tipo){
     return NULL;
 }
 
-bool Diretoria::RemoverAll2(const string &tipo){
+bool Diretoria::RemoverAll_Dir(const string &tipo){
     auto E = LF.begin(); //auto porque nao sabemos o return de LF.begin
     while(E != LF.end()){
         Elemento *E2 = *E; //para que tenhamos outro ponteiro, para apagar esta instancia se necessario
@@ -150,26 +187,6 @@ bool Diretoria::RemoverAll3(const string &tipo){ //saber se e ou nao para apagar
     }
 }
 
-
-/*Diretoria *Diretoria::Pesquisa_Dir_Ant(const string &s, int tipo){
-    for(Elemento *E : LF){
-        Elemento *pesq = E->Pesquisar(s, tipo);
-        if(pesq != NULL){
-            return this;
-        }
-    }
-    for (Elemento *E : LF) {
-        Diretoria *subDir = dynamic_cast<Diretoria*>(E);
-        if (subDir != NULL) {
-            Diretoria *resultado = subDir->Pesquisa_Dir_Ant(s, tipo);
-            if (resultado != NULL) {
-                return resultado; // Elemento encontrado em subdiretoria
-            }
-        }
-    }
-    return NULL;
-}*/
-
 bool Diretoria::MoveFile(const string &Fich, const string &DirNova){
     Elemento *elemento = this->Pesquisar(Fich, 0);
     if(elemento == NULL){
@@ -185,13 +202,6 @@ bool Diretoria::MoveFile(const string &Fich, const string &DirNova){
         return false;
     }
     Diretoria *dir_ant = (Diretoria *)this->Pesquisar(dir_antiga, 1);
-
-    /*string string_dir = dir->path + "/" + *((string *)file->Get("Nome"));
-
-    std::filesystem::path path_file = *((string *)file->Get("path"));
-    std::filesystem::path path_dir = string_dir;
-
-    std::filesystem::rename(path_file, path_dir);*/
 
     dir->LF.push_front(elemento);
     dir_ant->LF.remove(elemento);
@@ -215,15 +225,104 @@ bool Diretoria::MoveDir(const string &DirOld, const string &DirNew){
     }
     Diretoria *dir_ant = (Diretoria *)this->Pesquisar(dir_antiga, 1);
 
-    /*string string_dir = dir->path + "/" + *((string *)file->Get("Nome"));
-
-    std::filesystem::path path_file = *((string *)file->Get("path"));
-    std::filesystem::path path_dir = string_dir;
-
-    std::filesystem::rename(path_file, path_dir);*/
-
     dir->LF.push_front(elemento);
     dir_ant->LF.remove(elemento);
 
     return true;
+}
+
+void Diretoria::PesqFile(list<string> &lres, const string &file){
+    for(Elemento *E : LF){
+        E->PesqFile(lres, file);
+    }
+}
+
+void Diretoria::PesqDir(list<string> &lres, const string &dir){
+    if(dir.compare(this->Nome) == 0){
+        lres.push_front(this->path);
+    }
+
+    for(Elemento *E : LF){
+        E->PesqDir(lres, dir);
+    }
+}
+
+void Diretoria::PesqFile_Ponteiro(list<Elemento *> &lres, const string &file){
+
+    for(Elemento *E : LF){
+        E->PesqFile_Ponteiro(lres, file);
+    }
+}
+
+void Diretoria::Dupe(list<list<Elemento *>> &LS){
+    for(Elemento *E : LF){
+        E->Dupe(LS);
+    }
+}
+
+/*bool Diretoria::Find_padrao(const string &padrao, list<Elemento *> &LS){
+    auto ult = LF.begin();
+    bool remover;
+
+    while(ult != LF.end()) {
+        Elemento *E = *ult;
+
+        remover = E->Find_padrao(padrao, LS);
+
+        if (remover == true){
+            ult = LF.erase(ult);
+        }
+        else{
+            ++ult;
+        }
+    }
+    return false;
+}*/
+
+bool Diretoria::Find_padrao(const string &padrao, list<Elemento *> &LS){
+    auto ult = LF.begin();
+    string path;
+
+    bool copiar;
+
+    for(Elemento *E : LF){
+        copiar = E->Find_padrao(padrao, LS);
+        if(copiar == true){
+            path = *(string *)E->Get("path");
+            auto *F = new Ficheiro(path); //se construtor n aceitar entry -> entry.path().string()
+            LS.push_front(F);
+        }
+    }
+    return false;
+}
+
+bool Diretoria::Colocar_list(list<Elemento *> LS){
+    for(Elemento *E : LS){
+        this->LF.push_front(E);
+    }
+    return true;
+}
+
+void Diretoria::Escrever_XML(fstream &xml_file, int nivel){
+    nivel++;
+    int i = 0;
+    string espaco = "";
+    while(i < nivel){
+        espaco = espaco + "     ";
+        i++;
+    }
+    if(nivel > 0){
+        xml_file << espaco << "<diretoria name=" << this->Nome << ">" << endl;
+
+        for(Elemento *E : this->LF){
+            E->Escrever_XML(xml_file, nivel);
+        }
+
+        xml_file << espaco << "</diretoria>" << endl;
+    }
+    else{
+        for(Elemento *E : this->LF){
+            E->Escrever_XML(xml_file, nivel);
+        }
+    }
 }

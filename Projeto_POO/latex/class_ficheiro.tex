@@ -1,0 +1,385 @@
+\doxysection{Ficheiro Class Reference}
+\hypertarget{class_ficheiro}{}\label{class_ficheiro}\index{Ficheiro@{Ficheiro}}
+Inheritance diagram for Ficheiro\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_ficheiro}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_ficheiro_a7c9ea13f02bcaaa6d2b3c843bd40ec06}\label{class_ficheiro_a7c9ea13f02bcaaa6d2b3c843bd40ec06} 
+{\bfseries Ficheiro} (const string \&path)
+\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_ficheiro_a50408c18eacc4e6b78396e9ade6b6266}{Get}} (const string \&campo)
+\begin{DoxyCompactList}\small\item\em Retorno um dos campos do objeto em questão(\+Diretoria, Ficheiro) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_elemento}{Elemento}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_elemento_a7a2d2dc143c0e5f30ebf8b6448890ede}{Elemento}} (const string \&path)
+\begin{DoxyCompactList}\small\item\em Construtor da classe \doxylink{class_elemento}{Elemento}. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Elemento} ()
+\begin{DoxyCompactList}\small\item\em Destrutor virtual da classe \doxylink{class_elemento}{Elemento}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_elemento_affb29a9829d401b6205625c816da065a}{Cont\+Diretoria}} (\mbox{\hyperlink{class_diretoria}{Diretoria}} \texorpdfstring{$\ast$}{*}\&maior, \mbox{\hyperlink{class_diretoria}{Diretoria}} \texorpdfstring{$\ast$}{*}\&menor)
+\begin{DoxyCompactList}\small\item\em Encontra a diretoria com mais e menos elementos. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_elemento_af22a3dfe5a720ea92abf284699ecbfd5}{Big\+Directory}} (\mbox{\hyperlink{class_diretoria}{Diretoria}} \texorpdfstring{$\ast$}{*}\&dir)
+\begin{DoxyCompactList}\small\item\em Encontra a sub-\/diretoria que ocupa mais memória. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_elemento_a719eebc4504d4225ca7f8f9bf74a448f}{Move\+File}} (const string \&Fich, const string \&Dir\+Nova)
+\begin{DoxyCompactList}\small\item\em Move um ficheiro para uma nova diretoria. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_elemento_afa073b1a3d111b621a786b149db05fb1}{Move\+Dir}} (const string \&Dir\+Old, const string \&Dir\+New)
+\begin{DoxyCompactList}\small\item\em Move uma diretoria para outra diretoria. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_elemento_a51913b6a4e4ff2bbe472bf85408943f0}{Pesq\+Dir}} (list$<$ string $>$ \&lres, const string \&dir)
+\begin{DoxyCompactList}\small\item\em Pesquisa todas as diretorias existentes com um determinado nome. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_elemento_a8033d9423187cfdf8f0a15738e891d1d}{Change\+Name}} (const string \&name)
+\begin{DoxyCompactList}\small\item\em Altera o nome do elemento. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_elemento_ac0c38aef696c6293b41eaf5fa84d048a}{Colocar\+\_\+list}} (list$<$ \mbox{\hyperlink{class_elemento}{Elemento}} \texorpdfstring{$\ast$}{*} $>$ LS)
+\begin{DoxyCompactList}\small\item\em Adiciona à lista da diretoria adjacente, todos os elementos presentes na lista LS, passada por parâmetro. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_elemento_a5d9fd37eeb371fd603e9b04af9ea7c4c}{Mudar\+\_\+nome}} (int \&num)
+\begin{DoxyCompactList}\small\item\em Renomeia o ficheiro adicionando um número sequencial para diferenciar possíveis duplicados. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_ficheiro_ad3a993789fe367fa96d28b2877e90c41}{Escrever\+\_\+file}} (int ultimo, string espaco, int repeticao, ofstream \&file\+\_\+tree)
+\begin{DoxyCompactList}\small\item\em Escreve a estrutura da diretoria "{}mãe"{} num ficheiro de texto(para exportação). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ficheiro_aa785ae99e5ce8ea7ca978dc239a6928a}{Escrever\+\_\+ecra}} (int ultimo, string espaco, int repeticao)
+\begin{DoxyCompactList}\small\item\em Mostra a estrutura da diretoria "{}mãe"{}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ficheiro_aa6c39e43044e96566f25fb3ac59b814f}{Cont}} (int \&diretorias, int \&files)
+\begin{DoxyCompactList}\small\item\em Contabiliza o número de diretorias e ficheiros na diretoria "{}mãe"{}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_ficheiro_afd8cc536877760987e2a7dea2211ee43}{Get\+Size}} ()
+\begin{DoxyCompactList}\small\item\em Calcula o tamanho do objeto em memória. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ficheiro_ab9e2396e9e563418c4ff2e3834b3d033}{Mem\+\_\+total}} (int \&bytes\+\_\+totais)
+\begin{DoxyCompactList}\small\item\em Calcula o total de memória ocupada por toda a diretoria, de forma recursiva. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ficheiro_a59499fa471198e178536ec3804e051ee}{Big\+File}} (\mbox{\hyperlink{class_ficheiro}{Ficheiro}} \texorpdfstring{$\ast$}{*}\&file)
+\begin{DoxyCompactList}\small\item\em Encontra o ficheiro que ocupa mais memória. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_elemento}{Elemento}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_ficheiro_ac89fcc3fba66934e1b780b74397185b9}{Pesquisar}} (const string \&s, int Tipo)
+\begin{DoxyCompactList}\small\item\em Pesquisa um elemento pelo nome na diretoria "{}mãe"{}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_ficheiro_af0f76a84d6552e2f192ff715b3418a55}{Remover\+All3}} (const string \&tipo)
+\begin{DoxyCompactList}\small\item\em Verifica se o elemento deve ser removido com base no tipo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ficheiro_aea6d8b894fb01ed32b4721fe65656c85}{Pesq\+File}} (list$<$ string $>$ \&lres, const string \&file)
+\begin{DoxyCompactList}\small\item\em Pesquisa todas os ficheiros existentes com um determinado nome. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ficheiro_a668bf31474b1d868d8b6a4fcc0050a0a}{Pesq\+File\+\_\+\+Ponteiro}} (list$<$ \mbox{\hyperlink{class_elemento}{Elemento}} \texorpdfstring{$\ast$}{*} $>$ \&lres, const string \&file)
+\begin{DoxyCompactList}\small\item\em Pesquisa todas os ficheiros existentes com um determinado nome(retorna ponteiros) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ficheiro_a42a993cd967231df891cae4ae4460466}{Dupe}} (list$<$ list$<$ \mbox{\hyperlink{class_elemento}{Elemento}} \texorpdfstring{$\ast$}{*} $>$ $>$ \&LS)
+\begin{DoxyCompactList}\small\item\em Verifica duplicados agrupando-\/os por nome. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_ficheiro_a464235eef281ba8a64765b8ddcaf9f42}{Find\+\_\+padrao}} (const string \&padrao, list$<$ \mbox{\hyperlink{class_elemento}{Elemento}} \texorpdfstring{$\ast$}{*} $>$ \&LS)
+\begin{DoxyCompactList}\small\item\em Procura ficheiros que contenham um padrão no nome e adiciona-\/os a uma lista. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ficheiro_aa85469783937430491161bb49e98fe05}{Escrever\+\_\+\+XML}} (fstream \&xml\+\_\+file, int nivel)
+\begin{DoxyCompactList}\small\item\em Exporta a estrutura da diretoria no formato XML. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_elemento}{Elemento}}}
+\begin{DoxyCompactItemize}
+\item 
+string {\bfseries Nome}
+\item 
+string {\bfseries path}
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{class_ficheiro_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_ficheiro_a59499fa471198e178536ec3804e051ee}\index{Ficheiro@{Ficheiro}!BigFile@{BigFile}}
+\index{BigFile@{BigFile}!Ficheiro@{Ficheiro}}
+\doxysubsubsection{\texorpdfstring{BigFile()}{BigFile()}}
+{\footnotesize\ttfamily \label{class_ficheiro_a59499fa471198e178536ec3804e051ee} 
+void Ficheiro\+::\+Big\+File (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_ficheiro}{Ficheiro}} \texorpdfstring{$\ast$}{*}\&}]{file}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Encontra o ficheiro que ocupa mais memória. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{in,out}}  & {\em \doxylink{class_ficheiro}{Ficheiro}} & \texorpdfstring{$\ast$}{*}\&file -\/ Ponteiro para o maior ficheiro encontrado(variando ao longo da execução) \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_elemento_a9f1ccdf1352a73b9c274c8987a8b485b}{Elemento}}.
+
+\Hypertarget{class_ficheiro_aa6c39e43044e96566f25fb3ac59b814f}\index{Ficheiro@{Ficheiro}!Cont@{Cont}}
+\index{Cont@{Cont}!Ficheiro@{Ficheiro}}
+\doxysubsubsection{\texorpdfstring{Cont()}{Cont()}}
+{\footnotesize\ttfamily \label{class_ficheiro_aa6c39e43044e96566f25fb3ac59b814f} 
+void Ficheiro\+::\+Cont (\begin{DoxyParamCaption}\item[{int \&}]{diretorias}{, }\item[{int \&}]{files}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Contabiliza o número de diretorias e ficheiros na diretoria "{}mãe"{}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{in,out}}  & {\em int} & \&diretorias -\/ Contador de diretorias \\
+\hline
+\mbox{\texttt{in,out}}  & {\em int} & \&files -\/ Contador de ficheiros \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_elemento_a7dbcf56ac5c6f7a99e93bb33ebeb12ca}{Elemento}}.
+
+\Hypertarget{class_ficheiro_a42a993cd967231df891cae4ae4460466}\index{Ficheiro@{Ficheiro}!Dupe@{Dupe}}
+\index{Dupe@{Dupe}!Ficheiro@{Ficheiro}}
+\doxysubsubsection{\texorpdfstring{Dupe()}{Dupe()}}
+{\footnotesize\ttfamily \label{class_ficheiro_a42a993cd967231df891cae4ae4460466} 
+void Ficheiro\+::\+Dupe (\begin{DoxyParamCaption}\item[{list$<$ list$<$ \mbox{\hyperlink{class_elemento}{Elemento}} \texorpdfstring{$\ast$}{*} $>$ $>$ \&}]{LS}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Verifica duplicados agrupando-\/os por nome. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{in,out}}  & {\em list$<$list$<$\+Elemento} & \texorpdfstring{$\ast$}{*}\texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>} \&LS -\/ Hashing onde cada sub-\/lista contém elementos com o mesmo nome \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_elemento_aa90c93c8524da94199aa03c1508ee8f5}{Elemento}}.
+
+\Hypertarget{class_ficheiro_aa785ae99e5ce8ea7ca978dc239a6928a}\index{Ficheiro@{Ficheiro}!Escrever\_ecra@{Escrever\_ecra}}
+\index{Escrever\_ecra@{Escrever\_ecra}!Ficheiro@{Ficheiro}}
+\doxysubsubsection{\texorpdfstring{Escrever\_ecra()}{Escrever\_ecra()}}
+{\footnotesize\ttfamily \label{class_ficheiro_aa785ae99e5ce8ea7ca978dc239a6928a} 
+void Ficheiro\+::\+Escrever\+\_\+ecra (\begin{DoxyParamCaption}\item[{int}]{ultimo}{, }\item[{string}]{espaco}{, }\item[{int}]{repeticao}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Mostra a estrutura da diretoria "{}mãe"{}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{in}}  & {\em int} & ultimo -\/ Variável para indicar se determinado file é o último na lista de uma determinada diretoria \\
+\hline
+\mbox{\texttt{in}}  & {\em string} & espaco -\/ String de espacos anteriores, para que haja diferença de níveis \\
+\hline
+\mbox{\texttt{in}}  & {\em int} & repeticao -\/ Contador auxiliar para controlo de recursividade \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_elemento_afec05aa42e6525cb8e29585c35c1a485}{Elemento}}.
+
+\Hypertarget{class_ficheiro_ad3a993789fe367fa96d28b2877e90c41}\index{Ficheiro@{Ficheiro}!Escrever\_file@{Escrever\_file}}
+\index{Escrever\_file@{Escrever\_file}!Ficheiro@{Ficheiro}}
+\doxysubsubsection{\texorpdfstring{Escrever\_file()}{Escrever\_file()}}
+{\footnotesize\ttfamily \label{class_ficheiro_ad3a993789fe367fa96d28b2877e90c41} 
+void Ficheiro\+::\+Escrever\+\_\+file (\begin{DoxyParamCaption}\item[{int}]{ultimo}{, }\item[{string}]{espaco}{, }\item[{int}]{repeticao}{, }\item[{ofstream \&}]{file\+\_\+tree}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Escreve a estrutura da diretoria "{}mãe"{} num ficheiro de texto(para exportação). 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{in}}  & {\em int} & ultimo -\/ Variável para indicar se determinado file é o último na lista de uma determinada diretoria \\
+\hline
+\mbox{\texttt{in}}  & {\em string} & espaco -\/ String de espacos anteriores, para que haja diferença de níveis \\
+\hline
+\mbox{\texttt{in}}  & {\em int} & repeticao -\/ Contador auxiliar para controlo de recursividade \\
+\hline
+\mbox{\texttt{in,out}}  & {\em ofstream} & \&file\+\_\+tree -\/ Ponteiro do ficheiro para onde a Tree está a ser escrita \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_elemento_afe5cfe83f97696e347be6c53417e4e84}{Elemento}}.
+
+\Hypertarget{class_ficheiro_aa85469783937430491161bb49e98fe05}\index{Ficheiro@{Ficheiro}!Escrever\_XML@{Escrever\_XML}}
+\index{Escrever\_XML@{Escrever\_XML}!Ficheiro@{Ficheiro}}
+\doxysubsubsection{\texorpdfstring{Escrever\_XML()}{Escrever\_XML()}}
+{\footnotesize\ttfamily \label{class_ficheiro_aa85469783937430491161bb49e98fe05} 
+void Ficheiro\+::\+Escrever\+\_\+\+XML (\begin{DoxyParamCaption}\item[{fstream \&}]{xml\+\_\+file}{, }\item[{int}]{nivel}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Exporta a estrutura da diretoria no formato XML. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{in,out}}  & {\em fstream} & \&xml\+\_\+file -\/ Ponteiro para ficheiro XML onde será escrita a diretoria em XML \\
+\hline
+\mbox{\texttt{in}}  & {\em int} & nivel -\/ Contador para que se saiba quando "{}\textbackslash{}t"{} o elemento terá de ter atrás \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_elemento_a6f2fbe2dbc0a36bfdcacdb102f1bbfbf}{Elemento}}.
+
+\Hypertarget{class_ficheiro_a464235eef281ba8a64765b8ddcaf9f42}\index{Ficheiro@{Ficheiro}!Find\_padrao@{Find\_padrao}}
+\index{Find\_padrao@{Find\_padrao}!Ficheiro@{Ficheiro}}
+\doxysubsubsection{\texorpdfstring{Find\_padrao()}{Find\_padrao()}}
+{\footnotesize\ttfamily \label{class_ficheiro_a464235eef281ba8a64765b8ddcaf9f42} 
+bool Ficheiro\+::\+Find\+\_\+padrao (\begin{DoxyParamCaption}\item[{const string \&}]{padrao}{, }\item[{list$<$ \mbox{\hyperlink{class_elemento}{Elemento}} \texorpdfstring{$\ast$}{*} $>$ \&}]{LS}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Procura ficheiros que contenham um padrão no nome e adiciona-\/os a uma lista. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{in}}  & {\em const} & string \&padrao -\/ Padrão de texto a procurar \\
+\hline
+\mbox{\texttt{in,out}}  & {\em list$<$\+Elemento} & \texorpdfstring{$\ast$}{*}\texorpdfstring{$>$}{>} \&LS -\/ Lista onde os elementos encontrados serão adicionados \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True se encontrou, False caso contrário 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_elemento_ac97e8e6ec05512235ac850a4419f900e}{Elemento}}.
+
+\Hypertarget{class_ficheiro_a50408c18eacc4e6b78396e9ade6b6266}\index{Ficheiro@{Ficheiro}!Get@{Get}}
+\index{Get@{Get}!Ficheiro@{Ficheiro}}
+\doxysubsubsection{\texorpdfstring{Get()}{Get()}}
+{\footnotesize\ttfamily \label{class_ficheiro_a50408c18eacc4e6b78396e9ade6b6266} 
+void \texorpdfstring{$\ast$}{*} Ficheiro\+::\+Get (\begin{DoxyParamCaption}\item[{const string \&}]{campo}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Retorno um dos campos do objeto em questão(\+Diretoria, Ficheiro) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{in}}  & {\em const} & string \&campo -\/ Nome do campo do qual se quer o valor \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ponteiro genérico, do qual se terá de fazer cast na receção 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_elemento_a00fed0fec20baaab06e3c6d96e57aaa1}{Elemento}}.
+
+\Hypertarget{class_ficheiro_afd8cc536877760987e2a7dea2211ee43}\index{Ficheiro@{Ficheiro}!GetSize@{GetSize}}
+\index{GetSize@{GetSize}!Ficheiro@{Ficheiro}}
+\doxysubsubsection{\texorpdfstring{GetSize()}{GetSize()}}
+{\footnotesize\ttfamily \label{class_ficheiro_afd8cc536877760987e2a7dea2211ee43} 
+int Ficheiro\+::\+Get\+Size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Calcula o tamanho do objeto em memória. 
+
+\begin{DoxyReturn}{Returns}
+int -\/ O tamanho em bytes do objeto ao qual esta adjacente 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_elemento_a787677f1d9c152fd51d2bc1af68c3b0f}{Elemento}}.
+
+\Hypertarget{class_ficheiro_ab9e2396e9e563418c4ff2e3834b3d033}\index{Ficheiro@{Ficheiro}!Mem\_total@{Mem\_total}}
+\index{Mem\_total@{Mem\_total}!Ficheiro@{Ficheiro}}
+\doxysubsubsection{\texorpdfstring{Mem\_total()}{Mem\_total()}}
+{\footnotesize\ttfamily \label{class_ficheiro_ab9e2396e9e563418c4ff2e3834b3d033} 
+void Ficheiro\+::\+Mem\+\_\+total (\begin{DoxyParamCaption}\item[{int \&}]{bytes\+\_\+totais}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Calcula o total de memória ocupada por toda a diretoria, de forma recursiva. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{in,out}}  & {\em int} & \&bytes\+\_\+totais -\/ Acumulador de bytes \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_elemento_a36a4a4282def9ac3ea0c0a8c34051a63}{Elemento}}.
+
+\Hypertarget{class_ficheiro_aea6d8b894fb01ed32b4721fe65656c85}\index{Ficheiro@{Ficheiro}!PesqFile@{PesqFile}}
+\index{PesqFile@{PesqFile}!Ficheiro@{Ficheiro}}
+\doxysubsubsection{\texorpdfstring{PesqFile()}{PesqFile()}}
+{\footnotesize\ttfamily \label{class_ficheiro_aea6d8b894fb01ed32b4721fe65656c85} 
+void Ficheiro\+::\+Pesq\+File (\begin{DoxyParamCaption}\item[{list$<$ string $>$ \&}]{lres}{, }\item[{const string \&}]{file}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Pesquisa todas os ficheiros existentes com um determinado nome. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{in,out}}  & {\em list$<$string$>$} & \&lres -\/ Lista de strings onde os path de cada ficheiro encontrado correspondente a pesquisa \\
+\hline
+\mbox{\texttt{in}}  & {\em const} & string \&file -\/ Nome do ficheiro a pesquisar. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_elemento_abd30928ffcaf06839be69dd08b9abfca}{Elemento}}.
+
+\Hypertarget{class_ficheiro_a668bf31474b1d868d8b6a4fcc0050a0a}\index{Ficheiro@{Ficheiro}!PesqFile\_Ponteiro@{PesqFile\_Ponteiro}}
+\index{PesqFile\_Ponteiro@{PesqFile\_Ponteiro}!Ficheiro@{Ficheiro}}
+\doxysubsubsection{\texorpdfstring{PesqFile\_Ponteiro()}{PesqFile\_Ponteiro()}}
+{\footnotesize\ttfamily \label{class_ficheiro_a668bf31474b1d868d8b6a4fcc0050a0a} 
+void Ficheiro\+::\+Pesq\+File\+\_\+\+Ponteiro (\begin{DoxyParamCaption}\item[{list$<$ \mbox{\hyperlink{class_elemento}{Elemento}} \texorpdfstring{$\ast$}{*} $>$ \&}]{lres}{, }\item[{const string \&}]{file}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Pesquisa todas os ficheiros existentes com um determinado nome(retorna ponteiros) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{in,out}}  & {\em list$<$\+Elemento} & \texorpdfstring{$\ast$}{*}\texorpdfstring{$>$}{>} \&lres -\/ Lista de ponteiros para \doxylink{class_elemento}{Elemento} onde os resultados serão adicionados \\
+\hline
+\mbox{\texttt{in}}  & {\em const} & string \&file -\/ Nome do ficheiro a pesquisar \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_elemento_ada590fdd2ef17299369840f26b311b61}{Elemento}}.
+
+\Hypertarget{class_ficheiro_ac89fcc3fba66934e1b780b74397185b9}\index{Ficheiro@{Ficheiro}!Pesquisar@{Pesquisar}}
+\index{Pesquisar@{Pesquisar}!Ficheiro@{Ficheiro}}
+\doxysubsubsection{\texorpdfstring{Pesquisar()}{Pesquisar()}}
+{\footnotesize\ttfamily \label{class_ficheiro_ac89fcc3fba66934e1b780b74397185b9} 
+\mbox{\hyperlink{class_elemento}{Elemento}} \texorpdfstring{$\ast$}{*} Ficheiro\+::\+Pesquisar (\begin{DoxyParamCaption}\item[{const string \&}]{s}{, }\item[{int}]{Tipo}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Pesquisa um elemento pelo nome na diretoria "{}mãe"{}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{in}}  & {\em const} & string \&s -\/ O nome a pesquisar \\
+\hline
+\mbox{\texttt{in}}  & {\em int} & Tipo -\/ O tipo de elemento (1 para \doxylink{class_diretoria}{Diretoria}, 0 para \doxylink{class_ficheiro}{Ficheiro}) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ponteiro para o elemento encontrado ou NULL 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_elemento_a5b7742e9233b1620ab11b1ded1805023}{Elemento}}.
+
+\Hypertarget{class_ficheiro_af0f76a84d6552e2f192ff715b3418a55}\index{Ficheiro@{Ficheiro}!RemoverAll3@{RemoverAll3}}
+\index{RemoverAll3@{RemoverAll3}!Ficheiro@{Ficheiro}}
+\doxysubsubsection{\texorpdfstring{RemoverAll3()}{RemoverAll3()}}
+{\footnotesize\ttfamily \label{class_ficheiro_af0f76a84d6552e2f192ff715b3418a55} 
+bool Ficheiro\+::\+Remover\+All3 (\begin{DoxyParamCaption}\item[{const string \&}]{tipo}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Verifica se o elemento deve ser removido com base no tipo. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{in}}  & {\em const} & string \&tipo -\/ String que define o critério ("{}\+DIR"{} para diretorias, qualquer outra string para ficheiros) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True se for para remover, False caso contrário 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_elemento_ab90a9f76657cd5727186355f497287b5}{Elemento}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Ficheiro.\+h\item 
+Ficheiro.\+cpp\end{DoxyCompactItemize}

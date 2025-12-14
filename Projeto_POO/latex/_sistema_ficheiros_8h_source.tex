@@ -1,0 +1,51 @@
+\doxysection{Sistema\+Ficheiros.\+h}
+\hypertarget{_sistema_ficheiros_8h_source}{}\label{_sistema_ficheiros_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SISTEMAFICHEIROS\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ SISTEMAFICHEIROS\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include<string>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include"{}Diretoria.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include"{}Ficheiro.h"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }SistemaFicheiros}
+\DoxyCodeLine{00011\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \mbox{\hyperlink{class_elemento}{Elemento}}\ *Dir\_principal;}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{void}\ CarregarDiretoria(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&path,\ \mbox{\hyperlink{class_diretoria}{Diretoria}}\ *dir\_atual);}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ PesquisarAllFicheiros\_Ponteiro(list<Elemento\ *>\ \&lres,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&file);}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ CarregarDiretoria\_XML(\textcolor{keywordtype}{string}\ path,\ \mbox{\hyperlink{class_diretoria}{Diretoria}}\ *dir,\ fstream\ \&xml\_file);}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ Headers\_XML(\textcolor{keywordtype}{string}\ \&tipo,\ \textcolor{keywordtype}{string}\ \&valor,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&linha);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ SistemaFicheiros();}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \string~SistemaFicheiros();}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ Load(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&path);}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ ContarFicheiros();}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ ContarDirectorias();}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ Memoria();}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ *DirectoriaMaisElementos\ ();}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ *DirectoriaMenosElementos\ ();}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ *FicheiroMaior();}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ *DirectoriaMaisEspaco();}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ *Search(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&s,\ \textcolor{keywordtype}{int}\ Tipo);\textcolor{comment}{//tipo\ =\ 0\ -\/>file;\ tipo\ =\ 1-\/>dir}}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ RemoverAll(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&s,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&tipo);\ \textcolor{comment}{//true-\/>destruiu\ o\ que\ era\ suposto}}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Escrever\_XML(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&s);}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ Ler\_XML(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&s);}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ MoveFicheiro(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&Fich,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&DirNova);}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ MoverDirectoria(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&DirOld,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&DirNew);}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ *DataFicheiro(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&ficheiro);}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Tree(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ *fich\ =\ NULL);}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ PesquisarAllDirectorias(list<string>\ \&lres,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&dir);}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ PesquisarAllFicheiros(list<string>\ \&lres,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&file);}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ RenomearFicheiros(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&fich\_old,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&fich\_new);}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ FicheiroDuplicados();}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ CopyBatch(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&padrao,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&DirOrigem,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&DirDestino);}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00070\ \};}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

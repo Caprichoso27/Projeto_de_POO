@@ -1,0 +1,55 @@
+\doxysection{Diretoria.\+h}
+\hypertarget{_diretoria_8h_source}{}\label{_diretoria_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ DIRETORIA\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ DIRETORIA\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include<iostream>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include<string>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include<list>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include<filesystem>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include"{}Elemento.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include"{}Ficheiro.h"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }Diretoria\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_elemento_a7a2d2dc143c0e5f30ebf8b6448890ede}{Elemento}}}
+\DoxyCodeLine{00017\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ list<Elemento\ *>\ LF;}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ Diretoria(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&path);}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \string~Diretoria();}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ AddList(\mbox{\hyperlink{class_elemento_a7a2d2dc143c0e5f30ebf8b6448890ede}{Elemento}}\ *el);}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ *\mbox{\hyperlink{class_diretoria_aec2266c3037747e4ca1c115a9108be62}{Get}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&campo);}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ RemoverAll\_Dir(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&tipo);}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_diretoria_af0f61ac9bc15506f6aba4da6337bc608}{Escrever\_file}}(\textcolor{keywordtype}{int}\ ultimo,\ \textcolor{keywordtype}{string}\ espaco,\ \textcolor{keywordtype}{int}\ repeticao,\ ofstream\ \&file\_tree);}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_diretoria_a535028379ec889701aa1ed0de8fbdf6d}{Escrever\_ecra}}(\textcolor{keywordtype}{int}\ ultimo,\ \textcolor{keywordtype}{string}\ espaco,\ \textcolor{keywordtype}{int}\ repeticao);}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_diretoria_aca2d3f5792e222794f75dd57b05bd57e}{Cont}}(\textcolor{keywordtype}{int}\ \&diretorias,\ \textcolor{keywordtype}{int}\ \&files);}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_diretoria_a139bed684ed84dbac49a3a7aaabd8eeb}{GetSize}}();}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_diretoria_a80273e61c950372474b1e30945dcc167}{Mem\_total}}(\textcolor{keywordtype}{int}\ \&bytes\_totais);}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_diretoria_a75a3b42ffbf1381c3b1b594fc679cfd5}{ContDiretoria}}(Diretoria\ *\&maior,\ Diretoria\ *\&menor);}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_diretoria_a6b5e5e8df6b03ea21b5b9846330799c7}{BigFile}}(\mbox{\hyperlink{class_ficheiro}{Ficheiro}}\ *\&file);}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_diretoria_a773c651cd5a14eba58a727ada5d9c197}{BigDirectory}}(Diretoria\ *\&dir);}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_elemento_a7a2d2dc143c0e5f30ebf8b6448890ede}{Elemento}}\ *\mbox{\hyperlink{class_diretoria_adf65162220f9941d07e27d39e1cf6c08}{Pesquisar}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&s,\ \textcolor{keywordtype}{int}\ Tipo);}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_diretoria_a6099ab9d95f36524ad7b0f93c6e06691}{RemoverAll3}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&tipo);}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_diretoria_af810b0831cee0430163a498b8c46430f}{MoveFile}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&Fich,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&DirNova);}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_diretoria_aa694c8e9fcf657042648f2b692cf485c}{MoveDir}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&DirOld,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&DirNew);}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_diretoria_abba974ca600651d28fef2f8a201de49e}{PesqDir}}(list<string>\ \&lres,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&dir);}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_diretoria_a102dba165ec2630753bd6657f96b7073}{PesqFile}}(list<string>\ \&lres,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&file);}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_diretoria_a719c46482dea6b72406298157496b36b}{PesqFile\_Ponteiro}}(list<Elemento\ *>\ \&lres,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&file);}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_diretoria_af8ba523bb43b1700edc96d0a9839c47d}{Dupe}}(list<list<Elemento\ *>>\ \&LS);}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_diretoria_a301e35b953d70063ee979cec20cdac60}{Find\_padrao}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&padrao,\ list<Elemento\ *>\ \&LS);}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_diretoria_a2c42d742540ef3e71d153da613fea90a}{Colocar\_list}}(list<Elemento\ *>\ LS);}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_diretoria_a707e28ae6d95717c40c5eeb2865d8f91}{Escrever\_XML}}(fstream\ \&xml\_file,\ \textcolor{keywordtype}{int}\ nivel);}
+\DoxyCodeLine{00048\ \};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DIRETORIA\_H}}
+
+\end{DoxyCode}

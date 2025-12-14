@@ -1,0 +1,27 @@
+var class_elemento =
+[
+    [ "Elemento", "class_elemento.html#a7a2d2dc143c0e5f30ebf8b6448890ede", null ],
+    [ "~Elemento", "class_elemento.html#af49135626b9f2b5e50d93fb36620e359", null ],
+    [ "BigDirectory", "class_elemento.html#af22a3dfe5a720ea92abf284699ecbfd5", null ],
+    [ "BigFile", "class_elemento.html#a9f1ccdf1352a73b9c274c8987a8b485b", null ],
+    [ "ChangeName", "class_elemento.html#a8033d9423187cfdf8f0a15738e891d1d", null ],
+    [ "Colocar_list", "class_elemento.html#ac0c38aef696c6293b41eaf5fa84d048a", null ],
+    [ "Cont", "class_elemento.html#a7dbcf56ac5c6f7a99e93bb33ebeb12ca", null ],
+    [ "ContDiretoria", "class_elemento.html#affb29a9829d401b6205625c816da065a", null ],
+    [ "Dupe", "class_elemento.html#aa90c93c8524da94199aa03c1508ee8f5", null ],
+    [ "Escrever_ecra", "class_elemento.html#afec05aa42e6525cb8e29585c35c1a485", null ],
+    [ "Escrever_file", "class_elemento.html#afe5cfe83f97696e347be6c53417e4e84", null ],
+    [ "Escrever_XML", "class_elemento.html#a6f2fbe2dbc0a36bfdcacdb102f1bbfbf", null ],
+    [ "Find_padrao", "class_elemento.html#ac97e8e6ec05512235ac850a4419f900e", null ],
+    [ "Get", "class_elemento.html#a00fed0fec20baaab06e3c6d96e57aaa1", null ],
+    [ "GetSize", "class_elemento.html#a787677f1d9c152fd51d2bc1af68c3b0f", null ],
+    [ "Mem_total", "class_elemento.html#a36a4a4282def9ac3ea0c0a8c34051a63", null ],
+    [ "MoveDir", "class_elemento.html#afa073b1a3d111b621a786b149db05fb1", null ],
+    [ "MoveFile", "class_elemento.html#a719eebc4504d4225ca7f8f9bf74a448f", null ],
+    [ "Mudar_nome", "class_elemento.html#a5d9fd37eeb371fd603e9b04af9ea7c4c", null ],
+    [ "PesqDir", "class_elemento.html#a51913b6a4e4ff2bbe472bf85408943f0", null ],
+    [ "PesqFile", "class_elemento.html#abd30928ffcaf06839be69dd08b9abfca", null ],
+    [ "PesqFile_Ponteiro", "class_elemento.html#ada590fdd2ef17299369840f26b311b61", null ],
+    [ "Pesquisar", "class_elemento.html#a5b7742e9233b1620ab11b1ded1805023", null ],
+    [ "RemoverAll3", "class_elemento.html#ab90a9f76657cd5727186355f497287b5", null ]
+];
